@@ -1,0 +1,123 @@
+
+* {
+	box-sizing: border-box;
+}
+:root {
+	--nor: rgb(184, 184, 0);
+	--cen: rgb(255, 0, 255);
+	--sou: darkblue;
+	--size: 100px;
+	--line-width: 1.28rem;
+	--half-line: calc(var(--line-width) / 2);
+	--neg-half-line: calc(var(--half-line) - var(--line-width));
+	--neg-size: calc(0px - (var(--size)))
+	--res:all 0.4s ease;
+
+}
+
+
+
+body {
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	margin: 0;
+}
+
+.counter{
+	background-color: rgba(127, 255, 212, 0.37);
+	min-width:calc(3* var(--size) + var(--line-width));
+	height:calc(2* var(--size));
+	display: flex;
+	flex-direction: row;
+	justify-content:space-between;
+	padding: auto;
+	
+}
+.digit{
+	/* background-color: rgba(119, 92, 57, 0.514); */
+	position: relative;
+	display: flex;
+	flex-direction:column;	
+	width: calc(var(--size) + var(--line-width));
+	min-height: calc(var(--size) *2);
+	
+	margin: auto;
+	
+	
+}
+
+.dots{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	text-align: center;
+	width: calc(var(--size));
+	height: calc(var(--size)*2);
+	border:none;
+	
+	font-size: calc(var(--size)*3);
+	position:relative;
+	top:calc(-1 * var(--size));
+	
+}
+
+
+
+.container-top {
+	position: absolute;
+	top:0;
+	background-color: transparent;
+	width: var(--size);
+	height: var(--size);
+	/* box-shadow: 7px 3px 6px rgba(0, 0, 0, 0.2), 3px 9px 4px rgba(0, 0, 0, 0.2); */
+	margin: 5px;
+	
+}
+.container-bottom {
+	position: absolute;
+
+	top: var(--size);
+	background-color:transparent;
+	width: var(--size);
+	height: var(--size);
+	/* box-shadow: 7px 3px 6px rgba(0, 0, 0, 0.2), 3px 9px 4px rgba(0, 0, 0, 0.2); */
+	margin: 5px;
+	
+}
+
+.line {
+	background-color: transparent;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	width: var(--line-width);
+	height: calc(var(--size) );
+	border-radius: 10px;
+	border: 12px solid black;
+	transform-origin:bottom left;
+	
+}
+
+.bottom {
+	transform: rotate(90deg)  translateX(calc(var(--neg-half-line)*2));
+	transition: all 0.3s ease-out;
+}
+.mid {
+	transform: rotate(90deg) translateX(calc(var(--neg-half-line))) ;
+	transition: all 0.3s ease-out;
+}
+.top {
+	transform: rotate(90deg) translateX(calc(-1 * var(--size))) ;
+	transition: all 0.3s ease-out;
+}
+.left {
+	transition: all 0.3s ease-out;
+}
+.right {
+	transform: translateX(calc(var(--size) - var(--line-width)));
+	transition: all 0.3s ease-out;
+}
